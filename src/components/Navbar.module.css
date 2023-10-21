@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&family=Syne&display=swap');
+.Navbar{
+    padding: 1.8%;
+    z-index: 100;
+    background: #222e35;
+}
+.navbar_right{
+    display: flex;
+}
+.topbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav_link{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    padding: 10px;
+    transition: 0.6s;
+}
+.nav_link:hover{
+    transform: scale(0.9);
+    opacity: 0.8;
+}
+.nav_link strong{
+    font-weight: bold;
+    color: #888888;
+    margin-left: 20px;
+    font-size: 20px;
+    padding-right: 10px;
+}
+.account img{
+    border-radius: 50px;
+    margin-left: 10px;
+}
+.icon{
+margin-left: 40px;
+cursor: pointer;
+}
+.signOut{
+    position: absolute;
+    top: 7%;
+    left: 23%;
+    background: #080E11;
+    color: white;
+    border-style: none;
+    border-radius: 20px;
+    width: 5%;
+    padding: 10px;
+    z-index: 9;
+}
+.Sidebar{
+    position: fixed;
+    padding: 45px 20px;
+    margin-left: -8%;
+    margin-top: -2%;
+    background-color: #080E11;
+    height: 100vh;
+    display: none;
+}
+.Sidebar .nav_link{
+    margin: 50px 0;
+    width: 15px;
+    height: 15px;
+}
+.Sidebar .logo img{
+    margin-bottom: 30px;
+}/*
+@media only screen and (min-width: 1350px) and (max-width: 1700px) {
+      
+    .search{
+        left: 9.8%;
+    }
+    .icon{
+        margin-left: 10px;
+    }
+}
+  @media only screen and (min-width: 1169px) and (max-width: 1350px) {
+    .Navbar{
+        margin-left: -2%;
+        width: 100%;
+    }
+    .search{
+        left: 9%;
+    }
+    .icon{
+        margin-left: 10px;
+    }
+  }
+  
+  @media only screen and (min-width: 1115px) and (max-width: 1169px) {
+    .Navbar{
+        margin-left: -2%;
+        width: 100%;
+    }
+    .search{
+        left: 9%;
+    }
+    .icon{
+        margin-left: 10px;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 1115px) {
+    .Navbar{
+        margin-left: -2%;
+        width: 100%;
+    }
+    .search{
+        left: 9%;
+    }
+    .icon{
+        margin-left: 10px;
+    }
+  }
+  @media only screen and (min-width: 500px) and (max-width: 768px) {
+    .topbar{
+        display: none;
+    }    
+    .Sidebar{
+            display: block;
+        }
+}
+  @media only screen and  (min-width: 300px) and (max-width: 500px) {
+    .topbar{
+        display: none;
+    }   
+    .Sidebar{
+        display: block;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+    .logo img{
+        margin-left: 30%;
+    }
+}*/

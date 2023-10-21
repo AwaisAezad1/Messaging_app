@@ -1,0 +1,48 @@
+.SignInmain{
+    position: absolute;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+}
+.SignInmain .box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: auto;
+    margin-top: 10%;
+    background: #2f333659;
+    width: 25%;
+    padding: 20px;
+    border-radius: 15px;
+}
+.SignInmain button{
+    background:#7FCAFF14 ;
+    color: white;
+    border-style: none;
+    border-radius: 20px;
+    width: 30%;
+    padding: 10px;
+}
+.google h1{
+    font-size: 20px;
+}
+.google{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.SignInmain input{
+    outline: none;
+    background: #7FCAFF14;
+    height: 3vh;
+    border-style: none;
+    border-radius: 20px;
+    width: 50%;
+}
+.btn{
+    color: white;
+    margin-left: 20px;
+}

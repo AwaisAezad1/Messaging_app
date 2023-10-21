@@ -1,0 +1,140 @@
+body{
+    overflow: hidden;
+}
+.Messagemain{
+    color: white;
+    background: #080e11;
+    width: 30vw;
+    height :95vh;
+    border-right: 1px solid #888888;
+}
+.Messagemain h3{
+    padding: 0 5%;
+}
+.Messagemain p{
+    color: #888888;
+}
+.search_part{
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+}
+.search{
+    position: fixed;
+    z-index: 10;
+    left: 4%;
+}
+.Messagemain input{
+    width: 100%;
+    margin: 10px 1%;
+    padding-left: 40px;
+    background-color: #222e35;
+    color: white;
+    border-style: none;
+    border-radius: 10px;
+    height: 40px;
+    position: relative;
+}
+.Messagemain input::placeholder{
+    padding: 0;
+    color: white;
+}
+.msgpeople{
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+}
+.msgpeople p{
+    margin: 10px 0;
+    cursor: pointer;
+}
+::placeholder{
+    padding-left: 30px;
+    color: #888888;
+}
+.hl{
+    border-bottom: 1px solid #888888;
+    margin: 5px 20px;
+}/*
+@media only screen and (min-width: 1350px) and (max-width: 1700px) {
+    .Messagemain{
+        width: 250px;
+    }
+    .Messagemain input{
+        width: 200px;
+        margin-left: -0px;
+    }
+}
+  @media only screen and (min-width: 1169px) and (max-width: 1350px) {
+    .Messagemain{
+        width: 230px;
+        left: 30%;
+        top: 12%;
+        padding: 5px 20px;
+    }
+    .Messagemain input{
+        display: none;
+    }
+    .search{
+        display: none;
+    }
+    .hlinput{
+        display: none;
+    }
+  }
+  
+  @media only screen and (min-width: 1115px) and (max-width: 1169px) {
+    .Messagemain{
+        width: 230px;
+        left: 30%;
+        top: 11%;
+        padding: 5px 20px;
+    }
+    .Messagemain input{
+        display: none;
+    }
+    .search{
+        display: none;
+    }
+    .hlinput{
+        display: none;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 1115px) {
+    
+  }
+  @media only screen and (min-width: 500px) and (max-width: 768px) {
+    .Messagemain{
+        width: 320px;
+        left: 27%;
+        top: 3%;
+        padding: 5px 20px;
+    }
+    .Messagemain input{
+        display: none;
+    }
+    .search{
+        display: none;
+    }
+    .hlinput{
+        display: none;
+    }
+}
+  @media only screen and  (min-width: 300px) and (max-width: 500px) {
+    .Messagemain{
+        width: 320px;
+        left: 20%;
+        top: 3%;
+        padding: 5px 20px;
+    }
+    .Messagemain input{
+        display: none;
+    }
+    .search{
+        display: none;
+    }
+    .hlinput{
+        display: none;
+    }
+}*/
