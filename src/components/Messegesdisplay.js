@@ -1,43 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import color from '../assets/constants/color.json';
-import styles from './Messegesdisplay.module.css';
-import people from '../assets/images/people.png';
-import send from '../assets/images/sendmsg.png';
+import React, { useState, useEffect } from "react";
+import color from "../assets/constants/color.json";
+import styles from "./Messegesdisplay.module.css";
+import people from "../assets/images/people.png";
+import send from "../assets/images/sendmsg.png";
+import { useData } from "../context/DataProvider";
 
 function Messegesdisplay() {
-  const [message, setMessage] = useState('');
-  const [outgoingMessages, setOutgoingMessages] = useState([]);
-  const [incomingMessages] = useState([
-    "Hello",
-    "This is a sample incoming message.",
-    "You can customize these as needed.",
-  ]);
+  const [message, setMessage] = useState("");
+  const [chat, setChat] = useState(null);
+  const { chats, setSelectedChat, selectedChat } = useData();
 
   const handleInputChange = (event) => {
     setMessage(event.target.value);
   };
 
   const handleSendMessage = () => {
-    if (message.trim() !== '') {
-      setOutgoingMessages([...outgoingMessages, message]);
-      setMessage('');
+    if (message.trim() !== "") {
+      // setOutgoingMessages([...outgoingMessages, message]);
+      setMessage("");
     }
   };
 
   useEffect(() => {
-    const messageBody = document.getElementById('message_body');
-    if (messageBody) {
-      messageBody.scrollTop = messageBody.scrollHeight;
+    if (selectedChat !== "") {
+      let tempChat = chats.filter((c) => c._id == selectedChat);
+      setChat(tempChat[0]);
     }
-  }, [outgoingMessages]);
+  }, [chats, selectedChat]);
 
-  return (
+  return !chat ? (
+    <div>No Chat Selected</div>
+  ) : (
     <div className={styles.displaymain}>
       <div className={styles.displaybox1}>
         <div className={styles.top}>
           <div className={styles.peopletext}>
             <img width="40" height="40" src={people} alt="" />
-            <h1>Milli Smith</h1>
+            <h1>{chat.memberIds[0].fullName}</h1>
           </div>
           <img
             width="24"
@@ -60,18 +59,25 @@ function Messegesdisplay() {
         </div>
 
         <div id="message_body" className={styles.message_body}>
-          <div className={styles.messageContainer} >
-            <div className={styles.incomingMessages} >
-              {incomingMessages.map((msg, index) => (
-                <div key={index} className={styles.message}  style={{background:color.ingoingchat,  alignSelf: 'flex-start' }}>
-                  <p>{msg}</p>
-                </div>
-              ))}
-            </div>
-            <div className={styles.outgoingMessages}>
-              {outgoingMessages.map((msg, index) => (
-                <div key={index} className={styles.message} style={{ alignSelf: 'flex-end' }}>
-                  <p style={{ background: color.outgoingchat }}>{msg}</p>
+          <div className={styles.messageContainer}>
+            <div className={styles.incomingMessages}>
+              {chat.messages.map((msg, index) => (
+                <div
+                  key={index}
+                  className={styles.message}
+                  style={
+                    msg.senderId == "you"
+                      ? {
+                          background: color.ingoingchat,
+                          alignSelf: "flex-start",
+                        }
+                      : {
+                          background: color.outgoingchat,
+                          alignSelf: "flex-end",
+                        }
+                  }
+                >
+                  <p>{msg.text}</p>
                 </div>
               ))}
             </div>
@@ -98,7 +104,7 @@ function Messegesdisplay() {
           value={message}
           onChange={handleInputChange}
         />
-        {message.trim() !== '' ? (
+        {message.trim() !== "" ? (
           <img src={send} alt="send" onClick={handleSendMessage} />
         ) : (
           <img

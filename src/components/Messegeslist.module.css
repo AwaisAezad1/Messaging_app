@@ -1,61 +1,68 @@
-body{
-    overflow: hidden;
+body {
+  overflow: hidden;
 }
-.Messagemain{
-    color: white;
-    background: #080e11;
-    width: 30vw;
-    height :95vh;
-    border-right: 1px solid #888888;
+.Messagemain {
+  color: white;
+  background: #080e11;
+  width: 30vw;
+  height: 95vh;
+  border-right: 1px solid #888888;
 }
-.Messagemain h3{
-    padding: 0 5%;
+.Messagemain h3 {
+  padding: 0 5%;
 }
-.Messagemain p{
-    color: #888888;
+.Messagemain p {
+  color: #888888;
 }
-.search_part{
-    margin: 0 10px;
-    display: flex;
-    align-items: center;
+.search_part {
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
 }
-.search{
-    position: fixed;
-    z-index: 10;
-    left: 4%;
+.search {
+  position: fixed;
+  z-index: 10;
+  left: 4%;
 }
-.Messagemain input{
-    width: 100%;
-    margin: 10px 1%;
-    padding-left: 40px;
-    background-color: #222e35;
-    color: white;
-    border-style: none;
-    border-radius: 10px;
-    height: 40px;
-    position: relative;
+.Messagemain input {
+  width: 100%;
+  margin: 10px 1%;
+  padding-left: 40px;
+  background-color: #222e35;
+  color: white;
+  border-style: none;
+  border-radius: 10px;
+  height: 40px;
+  position: relative;
 }
-.Messagemain input::placeholder{
-    padding: 0;
-    color: white;
+.Messagemain input::placeholder {
+  padding: 0;
+  color: white;
 }
-.msgpeople{
-    padding: 5%;
-    display: flex;
-    flex-direction: column;
+.msgpeople {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
 }
-.msgpeople p{
-    margin: 10px 0;
-    cursor: pointer;
+.msgpeople p {
+  margin: 10px 0;
+  cursor: pointer;
 }
-::placeholder{
-    padding-left: 30px;
-    color: #888888;
+::placeholder {
+  padding-left: 30px;
+  color: #888888;
 }
-.hl{
-    border-bottom: 1px solid #888888;
-    margin: 5px 20px;
-}/*
+.selectedChat p {
+  color: #080e11 !important;
+}
+.selectedChat {
+  font-weight: 600;
+  background-color: rgb(169, 255, 255);
+}
+.hl {
+  border-bottom: 1px solid #888888;
+  margin: 5px 20px;
+} /*
 @media only screen and (min-width: 1350px) and (max-width: 1700px) {
     .Messagemain{
         width: 250px;

@@ -1,18 +1,13 @@
-import React, { useState } from 'react';
-import styles from './Messegeslist.module.css';
-import Navbar from '../components/Navbar';
+import React, { useState } from "react";
+import styles from "./Messegeslist.module.css";
+import Navbar from "../components/Navbar";
+import { useData } from "../context/DataProvider";
 
 function Messegeslist() {
   // Define a list of chat participants
-  const chatParticipants = [
-    { id: 1, name: "John Doe" },
-    { id: 2, name: "Alice Johnson" },
-    { id: 3, name: "Bob Smith" },
-    // Add more participants as needed
-  ];
+  const { chats, setSelectedChat, selectedChat } = useData();
 
   // Define a state to keep track of the selected chat participant
-  const [selectedChat, setSelectedChat] = useState(null);
 
   return (
     <div className={styles.Messagemain}>
@@ -25,7 +20,7 @@ function Messegeslist() {
           src="https://img.icons8.com/888888/ios-glyphs/30/search--v1.png"
           alt="search--v1"
         />
-        <input type='text' placeholder='Search or start a new chat' />
+        <input type="text" placeholder="Search or start a new chat" />
         <img
           width="20"
           height="20"
@@ -35,13 +30,16 @@ function Messegeslist() {
       </div>
 
       <div className={styles.msgpeople}>
-        {chatParticipants.map((participant) => (
+        {chats.map((participant) => (
           <div
-            key={participant.id}
-            className={`${styles.chatItem} ${selectedChat === participant.id ? styles.selectedChat : ''}`}
-            onClick={() => setSelectedChat(participant.id)}
+            id={participant._id}
+            key={participant._id}
+            className={`${styles.chatItem} ${
+              selectedChat == participant._id ? styles.selectedChat : ""
+            }`}
+            onClick={() => setSelectedChat(participant._id)}
           >
-            <span><p>{participant.name}</p></span>
+            <p>{participant.memberIds[0].fullName}</p>
           </div>
         ))}
       </div>

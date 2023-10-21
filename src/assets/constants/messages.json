@@ -1,0 +1,62 @@
+[
+  {
+    "_id": "chat1",
+    "memberIds": [
+      {
+        "_id": "123",
+        "fullName": "Faraz"
+      },
+      {
+        "_id": "you",
+        "fullName": "Awais"
+      }
+    ],
+    "messages": [
+      {
+        "_id": "mid1",
+        "text": "Hello I need Help",
+        "senderId": "123"
+      },
+      {
+        "_id": "mid2",
+        "text": "How can i help you",
+        "senderId": "you"
+      },
+      {
+        "_id": "mid3",
+        "text": ":)",
+        "senderId": "123"
+      }
+    ]
+  },
+  {
+    "_id": "chat2",
+    "memberIds": [
+      {
+        "_id": "1234",
+        "fullName": "Muneeb"
+      },
+      {
+        "_id": "you",
+        "fullName": "Awais"
+      }
+    ],
+    "messages": [
+      {
+        "_id": "mid12",
+        "text": "Hello you need Help",
+        "senderId": "1234"
+      },
+      {
+        "_id": "mid22",
+        "text": "How?",
+        "senderId": "you"
+      },
+      {
+        "_id": "mid32",
+        "text": ":)",
+        "senderId": "1234"
+      }
+    ]
+  }
+]
