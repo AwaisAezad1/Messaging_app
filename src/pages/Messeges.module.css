@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap');
+
 .message_box_flex{
     display: flex;
-    padding: 30px 50px;
+    margin: 20px;
+}
+body{
+    
+    font-family: 'Space Grotesk', sans-serif;
 }

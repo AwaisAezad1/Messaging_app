@@ -3,6 +3,7 @@ import color from "../assets/constants/color.json";
 import styles from "./Messegesdisplay.module.css";
 import people from "../assets/images/people.png";
 import send from "../assets/images/sendmsg.png";
+import logo from "../assets/images/logo.png";
 import { useData } from "../context/DataProvider";
 
 function Messegesdisplay() {
@@ -16,46 +17,66 @@ function Messegesdisplay() {
 
   const handleSendMessage = () => {
     if (message.trim() !== "") {
-      // setOutgoingMessages([...outgoingMessages, message]);
+      const newMessage = {
+        text: message,
+        senderId: "you", // Assuming "you" is the sender of the message
+      };
+
+      const updatedChat = {
+        ...chat,
+        messages: [...chat.messages, newMessage],
+      };
+
+      
+      setChat(updatedChat);
+
+      
       setMessage("");
     }
   };
 
   useEffect(() => {
     if (selectedChat !== "") {
-      let tempChat = chats.filter((c) => c._id == selectedChat);
+      let tempChat = chats.filter((c) => c._id === selectedChat);
       setChat(tempChat[0]);
     }
   }, [chats, selectedChat]);
 
   return !chat ? (
-    <div>No Chat Selected</div>
+    <div className={styles.nochat_main}>
+      <img src={logo} alt="logo" />
+      <h1>Download Vet-Guard for Mobile</h1>
+      <h2>Make calls, share your screen and get a faster experience when you download the Windows app.</h2>
+      <button>Get the App</button>
+    </div>
   ) : (
     <div className={styles.displaymain}>
       <div className={styles.displaybox1}>
         <div className={styles.top}>
           <div className={styles.peopletext}>
-            <img width="40" height="40" src={people} alt="" />
+            <img src={chat.memberIds[0].profilePictureUrl} alt="Profile Picture" />
             <h1>{chat.memberIds[0].fullName}</h1>
           </div>
-          <img
+          <div className={styles.topLinks}>
+          <img 
             width="24"
             height="24"
-            src="https://img.icons8.com/ios/50/video-call.png"
+            src="https://img.icons8.com/ffffff/ios/50/video-call.png"
             alt="video-call"
           />
-          <img
+          <img className={styles.link}
             width="24"
             height="24"
-            src="https://img.icons8.com/888888/ios-glyphs/30/search--v1.png"
+            src="https://img.icons8.com/ffffff/ios-glyphs/30/search--v1.png"
             alt="search--v1"
           />
-          <img
+          <img className={styles.link}
             width="24"
             height="24"
             src="https://img.icons8.com/ffffff/ios-glyphs/25/menu-2.png"
             alt="menu-2"
           />
+          </div>
         </div>
 
         <div id="message_body" className={styles.message_body}>
@@ -66,14 +87,14 @@ function Messegesdisplay() {
                   key={index}
                   className={styles.message}
                   style={
-                    msg.senderId == "you"
+                    msg.senderId === "you"
                       ? {
-                          background: color.ingoingchat,
-                          alignSelf: "flex-start",
-                        }
-                      : {
                           background: color.outgoingchat,
                           alignSelf: "flex-end",
+                        }
+                      : {
+                          background: color.ingoingchat,
+                          alignSelf: "flex-start",
                         }
                   }
                 >
@@ -95,7 +116,7 @@ function Messegesdisplay() {
         <img
           width="24"
           height="24"
-          src="https://img.icons8.com/888888/android/24/plus.png"
+          src="https://img.icons8.com/ffffff/android/24/plus.png"
           alt="plus"
         />
         <input

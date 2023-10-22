@@ -4,6 +4,7 @@ import styles from './Auth.module.css'
 import {createUserWithEmailAndPassword} from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
+import logo from "../assets/images/logo.png";
 
 function Auth(){
 
@@ -33,7 +34,7 @@ function Auth(){
     return(
         <div className={styles.Authmain}>
            <div className={styles.box}>
-                
+           <img src={logo} alt="logo"/>
                 <input type="text" placeholder='Firstname' />
                 <input type="text" placeholder='Lastname' />
                 <input type="email" placeholder="Email" onChange={(e)=> setemail(e.target.value)} />

@@ -2,7 +2,7 @@
 .Navbar{
     padding: 1.8%;
     z-index: 100;
-    background: #222e35;
+    background: #061f008f;
 }
 .navbar_right{
     display: flex;
@@ -42,7 +42,7 @@ cursor: pointer;
 .signOut{
     position: absolute;
     top: 7%;
-    left: 23%;
+    left: 26%;
     background: #080E11;
     color: white;
     border-style: none;
@@ -51,89 +51,125 @@ cursor: pointer;
     padding: 10px;
     z-index: 9;
 }
-.Sidebar{
-    position: fixed;
-    padding: 45px 20px;
-    margin-left: -8%;
-    margin-top: -2%;
-    background-color: #080E11;
-    height: 100vh;
+.dropdown{
     display: none;
 }
-.Sidebar .nav_link{
-    margin: 50px 0;
-    width: 15px;
-    height: 15px;
-}
-.Sidebar .logo img{
-    margin-bottom: 30px;
-}/*
-@media only screen and (min-width: 1350px) and (max-width: 1700px) {
-      
-    .search{
-        left: 9.8%;
-    }
-    .icon{
-        margin-left: 10px;
-    }
-}
-  @media only screen and (min-width: 1169px) and (max-width: 1350px) {
-    .Navbar{
-        margin-left: -2%;
-        width: 100%;
-    }
-    .search{
-        left: 9%;
-    }
-    .icon{
-        margin-left: 10px;
-    }
-  }
-  
-  @media only screen and (min-width: 1115px) and (max-width: 1169px) {
-    .Navbar{
-        margin-left: -2%;
-        width: 100%;
-    }
-    .search{
-        left: 9%;
-    }
-    .icon{
-        margin-left: 10px;
-    }
-  }
-  
-  @media only screen and (min-width: 768px) and (max-width: 1115px) {
-    .Navbar{
-        margin-left: -2%;
-        width: 100%;
-    }
-    .search{
-        left: 9%;
-    }
-    .icon{
-        margin-left: 10px;
-    }
-  }
-  @media only screen and (min-width: 500px) and (max-width: 768px) {
-    .topbar{
+  @media only screen and  (min-width: 0px) and (max-width: 1115px) {
+    .navbar_right{
         display: none;
-    }    
-    .Sidebar{
-            display: block;
-        }
-}
-  @media only screen and  (min-width: 300px) and (max-width: 500px) {
-    .topbar{
-        display: none;
-    }   
-    .Sidebar{
+    }
+    .dropdown{
         display: block;
-        display: flex;
-        flex-direction: column;
-        align-self: center;
     }
-    .logo img{
-        margin-left: 30%;
+    .dropdown button{
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        align-items: center;
+        width: 10vw;
+        
+        z-index: 99;
     }
-}*/
+}
+  @media only screen and  (min-width: 0px) and (max-width: 1115px) {
+    .navbar_right{
+        display: none;
+    }
+    .dropdown{
+        display: block;
+    }
+    .dropdown button{
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        align-items: center;
+        width: 11.5vw;
+        left: 21%;
+        top: 14%;
+    }
+}
+  @media only screen and  (min-width: 935px) and (max-width: 1024px) {
+    
+    .dropdown button{
+        width: 15vw;
+        left: 17%;
+    }
+}
+  @media only screen and  (min-width: 768px) and (max-width: 935px) {
+    
+    .dropdown button{
+        width: 15vw;
+        left: 17%;
+        top: 6.5%;
+    }
+}
+  @media only screen and  (min-width: 630px) and (max-width: 768px) {
+    
+    .dropdown button{
+        width: 15vw;
+        left: 17%;
+        top: 8%;
+    }
+}
+  @media only screen and  (min-width: 500px) and (max-width: 630px) {
+    
+    .dropdown button{
+        width: 19vw;
+        left: 16%;
+        top: 12%;
+    }
+}
+  @media only screen and  (min-width: 375px) and (max-width: 500px) {
+    
+    .dropdown button{
+        width: 29vw;
+        left: 0%;
+        top: 8%;
+    }
+    .account img{
+        width: 50px;
+        height: 30px;
+    }
+}
+  @media only screen and  (min-width: 411px) and (max-width: 412px) {
+    
+    .dropdown button{
+        width: 29vw;
+        left: 0%;
+        top: 8%;
+    }
+}
+
+@media only screen and  (min-width: 360px) and (max-width: 375px) {
+    
+    .dropdown button{
+        width: 29vw;
+        top: 11%;
+        left: 0%;
+    }
+    .account img{
+        width: 50px;
+        height: 30px;
+    }
+}
+  @media only screen and  (min-width: 350px) and (max-width: 360px) {
+    
+    .dropdown button{
+        width: 29vw;
+        left: 1%;
+        top: 10%;
+    }
+}
+  @media only screen and  (min-width: 150px) and (max-width: 350px) {
+    
+    .dropdown button{
+        width: 29vw;
+        left: 10%;
+        top: 11%;
+        grid-template-columns: auto;
+    }
+    .account img{
+        width: 30px;
+        height: 20px;
+    }
+}

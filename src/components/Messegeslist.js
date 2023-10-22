@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Messegeslist.module.css";
 import Navbar from "../components/Navbar";
 import { useData } from "../context/DataProvider";
-
+import people from '../assets/images/people.png'
 function Messegeslist() {
   // Define a list of chat participants
   const { chats, setSelectedChat, selectedChat } = useData();
@@ -39,7 +39,12 @@ function Messegeslist() {
             }`}
             onClick={() => setSelectedChat(participant._id)}
           >
-            <p>{participant.memberIds[0].fullName}</p>
+            <img src={participant.memberIds[0].profilePictureUrl} alt="Profile Picture" />
+            <h2><h1>{participant.memberIds[0].fullName}</h1>
+            <p>{participant.messages.length > 0 ? participant.messages[participant.messages.length - 1].text : ''}</p>
+            </h2>
+                    
+
           </div>
         ))}
       </div>

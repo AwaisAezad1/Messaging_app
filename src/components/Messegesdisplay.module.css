@@ -1,27 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:&family=Syne&display=swap');
-*{
-    padding: 0;
-    margin: 0;
-}
+
 body{
-    padding: 0;
-    margin: 0;
+    background:url("../assets/images/Get\ Started.png")
 }
 .displaymain{
     width: 80vw;
     
 }
 .displaybox1{
-    padding: 20px 0;
-    background: #222e35;
-    height: 84.5vh;
-    overflow-y: hidden;
+    padding: 0;
+    background: #061f008f;
+    height: 88.7vh;
+    overflow: hidden;
+    
     
 }
 .peopletext{
     padding-right: 70%;
     display: flex;
     align-items: center;
+    
+}
+.peopletext img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
 }
 .peopletext h1{
     margin-left: 30px;
@@ -29,18 +31,16 @@ body{
     font-size: 20px;
 }
 .displaybox1 .top{
-    margin: 0 10px;
-    position: fixed;
-    width: 67%;
-    height: 2vh;
+    margin:  10px;
+    max-width: 67vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .message_body{
-    background: url('../assets/images/94621a4427b740cc2addc5270f52a3b0.jpg');
+    background: url('../assets/images/back.jpg');
 
-    margin-top: 3.2%;
+    margin-top: -0.5%;
     padding-top: 1%;
     overflow-y: auto;
     max-height: 780px;
@@ -48,35 +48,14 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-.outgoingMessages .message {
-    margin: 2px 30px;
-    word-wrap: break-word;
-    display: flex;
-    justify-content: flex-end;
-    border-radius: 25px;
-  }
 .incomingMessages .message {
     margin: 2px 30px;
     word-wrap: break-word;
-    display: flex;
-    justify-content: flex-start;
     border-radius: 25px;
+    max-width: 25vw;
   }
-.message_body .outgoingMessages p{
-    color: white;
-    font-family: Roboto;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 15px;
-    letter-spacing: 1px;
-    border-radius: 25px;
-    padding: 10px;
-    margin: 2px 0;
-    max-width: 40%;
-}
 .message_body .incomingMessages p{
     color: white;
-    font-family: Roboto;
     font-size: 13px;
     font-weight: 400;
     line-height: 15px;
@@ -84,13 +63,14 @@ body{
     border-radius: 25px;
     padding: 10px;
     margin: 2px 0;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    
 }
 .incomingMessages{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    width: 50%;
+    width: 100%;
 }
 .displaybox2{
     bottom: 2.9%;
@@ -98,7 +78,7 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 0px 20px;
-    background: #222e35;
+    background: #061f008f;
 }
 .displaybox2 input{
     margin: 10px 0;
@@ -116,37 +96,131 @@ body{
     color: white;
     padding: 0 5px;
 }
-/*
+.nochat_main{
+    background: rgb(66,122,37);
+background: radial-gradient(circle, rgba(65, 122, 37, 0.281) 0%, rgb(3, 29, 0) 46%); display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 70vw;
+    text-align: center;
+
+}
+.nochat_main h1{
+    font-weight:lighter;
+    color: rgba(255, 255, 255, 0.849);
+}
+.nochat_main h2{
+    margin-top: 20px;
+    font-weight:100;
+    max-width: 40vw;
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.658);
+}
+.nochat_main button{
+    border-style: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-top: 60px;
+    background-color: #00a884;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(158, 158, 158, 0.74); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgb(136, 153, 97); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+.topLinks{
+    display: flex;
+}
+.topLinks img{
+    padding: 0 5px;
+}
+
 @media only screen and (min-width: 1350px) and (max-width: 1700px) {
-    .displaymain{
-        width: 500px;
-        
-    }
 }
   @media only screen and (min-width: 1169px) and (max-width: 1350px) {
-    .displaymain{
-        width: 500px;
-        top: 12%;
-    }
   }
   
   @media only screen and (min-width: 1115px) and (max-width: 1169px) {
-    .displaymain{
-        width: 450px;
-        top: 11%;
-    }
   }
   
-  @media only screen and (min-width: 768px) and (max-width: 1115px) {
-    
+  @media only screen and (min-width: 990px) and (max-width: 1115px) {
+    .displaybox1 .top{
+        width: 80%;
+    }
+    .top img{
+        padding: 0 10px;
+    }
   }
-  @media only screen and (min-width: 500px) and (max-width: 768px) {
-    .displaymain{
+  @media only screen and (min-width: 850px) and (max-width: 990px) {
+    .displaybox1 .top{
+        width: 65%;
+    }
+    .top img{
+        padding: 0 10px;
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 850px) {
+    .displaybox1 .top{
+        width: 55%;
+    }
+    .top img{
+        padding: 0 10px;
+    }
+  }
+  @media only screen and (min-width: 680px) and (max-width: 768px) {
+    .displaybox1 .top{
+        width: 40%;
+    }
+    .top img{
+        padding: 0 10px;
+    }
+  }
+  @media only screen and (min-width: 600px) and (max-width: 680px) {
+    
+    .displaybox1 .top{
+        width: 39%;
+    }
+    .top img{
+        padding: 0 5px;
+    }
+}
+  @media only screen and (min-width: 550px) and (max-width: 600px) {
+    
+    .displaybox1 .top{
+        width: 27%;
+    }
+    .top img{
+        padding: 0 5px;
+    }
+}
+  @media only screen and  (min-width: 300px) and (max-width: 550px) {
+    .displaybox1 .top{
+        width: 10%;
+    }
+    .displaybox1{
+        width: 68vw;
+        border-top-right-radius: 15px;
+    }
+    .top img{
+        padding: 0 5px;
+    }
+}
+  @media only screen and  (min-width: 0px) and (max-width: 550px) {
+    .topLinks{
         display: none;
     }
 }
-  @media only screen and  (min-width: 300px) and (max-width: 500px) {
-    .displaymain{
-        display: none;
-    }
-}*/

@@ -25,6 +25,8 @@
     border-radius: 20px;
     width: 30%;
     padding: 10px;
+    
+    font-family: 'Space Grotesk', sans-serif;
 }
 .google h1{
     font-size: 20px;
@@ -42,7 +44,31 @@
     border-radius: 20px;
     width: 50%;
 }
+.SignInmain ::placeholder{
+    
+    font-family: 'Space Grotesk', sans-serif;
+}
 .btn{
     color: white;
     margin-left: 20px;
 }
+
+@media only screen and (min-width: 900px) and (max-width: 1115px) {
+    .SignInmain .box{
+        margin-top: 20%;
+    }
+  }
+  @media only screen and (min-width: 600px) and (max-width: 900px) {
+    .SignInmain .box
+    {
+        margin-top: 30%;
+        width: 40%;
+    }
+  }
+  @media only screen and (min-width: 100px) and (max-width: 600px) {
+    .SignInmain .box
+    {
+        margin-top: 50%;
+        width: 60%;
+    }
+  }
