@@ -1,14 +1,10 @@
 
-body{
-    background:url("../assets/images/Get\ Started.png")
-}
 .displaymain{
     width: 80vw;
     
 }
 .displaybox1{
     padding: 0;
-    background: #061f008f;
     height: 88.7vh;
     overflow: hidden;
     
@@ -38,7 +34,6 @@ body{
     align-items: center;
 }
 .message_body{
-    background: url('../assets/images/back.jpg');
 
     margin-top: -0.5%;
     padding-top: 1%;
@@ -78,7 +73,6 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 0px 20px;
-    background: #061f008f;
 }
 .displaybox2 input{
     margin: 10px 0;

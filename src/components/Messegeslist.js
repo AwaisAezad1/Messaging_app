@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Messegeslist.module.css";
 import Navbar from "../components/Navbar";
 import { useData } from "../context/DataProvider";
-import people from '../assets/images/people.png'
+import color from '../assets/constants/color.json'
 function Messegeslist() {
   // Define a list of chat participants
   const { chats, setSelectedChat, selectedChat } = useData();
@@ -10,7 +10,7 @@ function Messegeslist() {
   // Define a state to keep track of the selected chat participant
 
   return (
-    <div className={styles.Messagemain}>
+    <div className={styles.Messagemain} style={{background:color.messagelist_background}}>
       <Navbar />
       <div className={styles.search_part}>
         <img

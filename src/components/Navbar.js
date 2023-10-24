@@ -1,5 +1,6 @@
 import styles from './Navbar.module.css'
 import logo from "../assets/images/logo.png";
+import color from '../assets/constants/color.json'
 import { NavLink } from 'react-router-dom'
 import React, { useState } from 'react';
 import {auth } from '../config/Firebase'
@@ -21,7 +22,7 @@ function Navbar(){
 }
 
     return(
-        <div className={styles.Navbar}>
+        <div className={styles.Navbar} style={{background:color.message_display_navbarandfooter}}>
             <div className={styles.topbar}>
             <div className={styles.account}>
             <NavLink to={""}><img src={logo} alt=''/></NavLink>

@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import color from "../assets/constants/color.json";
+import backgroundImage from "../assets/images/images.json";
 import styles from "./Messegesdisplay.module.css";
-import people from "../assets/images/people.png";
-import send from "../assets/images/sendmsg.png";
 import logo from "../assets/images/logo.png";
 import { useData } from "../context/DataProvider";
 
 function Messegesdisplay() {
   const [message, setMessage] = useState("");
   const [chat, setChat] = useState(null);
-  const { chats, setSelectedChat, selectedChat } = useData();
+  const { chats, selectedChat } = useData();
 
   const handleInputChange = (event) => {
     setMessage(event.target.value);
@@ -51,7 +50,7 @@ function Messegesdisplay() {
     </div>
   ) : (
     <div className={styles.displaymain}>
-      <div className={styles.displaybox1}>
+      <div className={styles.displaybox1} style={{background:color.message_display_navbarandfooter}}>
         <div className={styles.top}>
           <div className={styles.peopletext}>
             <img src={chat.memberIds[0].profilePictureUrl} alt="Profile Picture" />
@@ -79,7 +78,7 @@ function Messegesdisplay() {
           </div>
         </div>
 
-        <div id="message_body" className={styles.message_body}>
+        <div id="message_body" className={styles.message_body} style={{backgroundImage: `url(${backgroundImage.message_display_background})`}}>
           <div className={styles.messageContainer}>
             <div className={styles.incomingMessages}>
               {chat.messages.map((msg, index) => (
@@ -105,7 +104,7 @@ function Messegesdisplay() {
           </div>
         </div>
       </div>
-      <div className={styles.displaybox2}>
+      <div className={styles.displaybox2} style={{background:color.message_display_navbarandfooter}}>
         <img
           className={styles.emoji}
           width="24"
@@ -126,7 +125,7 @@ function Messegesdisplay() {
           onChange={handleInputChange}
         />
         {message.trim() !== "" ? (
-          <img src={send} alt="send" onClick={handleSendMessage} />
+          <img width="24" height="24" src="https://img.icons8.com/ffffff/fluency-systems-regular/48/sent--v1.png" alt="sent--v1" onClick={handleSendMessage} /> 
         ) : (
           <img
             width="24"

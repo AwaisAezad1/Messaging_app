@@ -1,5 +1,7 @@
 {
     "primary":"#0c1317",
     "outgoingchat":"#4D4E37",
-    "ingoingchat":"#27352A"
+    "ingoingchat":"#27352A",
+    "message_display_navbarandfooter":"#061f008f",
+    "messagelist_background":"#040e00"
 }
