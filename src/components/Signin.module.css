@@ -1,74 +1,76 @@
-.SignInmain{
-    position: absolute;
-    color: white;
-    height: 100vh;
-    width: 100vw;
-    margin: auto;
+.SignInmain {
+  position: absolute;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  margin: auto;
 }
-.SignInmain .box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    margin: auto;
-    margin-top: 10%;
-    background: #2f333659;
-    width: 25%;
-    padding: 20px;
-    border-radius: 15px;
+.SignInmain .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: auto;
+  margin-top: 10%;
+  background: #2f333659;
+  width: 25%;
+  padding: 20px;
+  border-radius: 15px;
 }
-.SignInmain button{
-    background:#7FCAFF14 ;
-    color: white;
-    border-style: none;
-    border-radius: 20px;
-    width: 30%;
-    padding: 10px;
-    
-    font-family: 'Space Grotesk', sans-serif;
+.SignInmain button {
+  background: #7fcaff14;
+  color: white;
+  border-style: none;
+  border-radius: 20px;
+  width: 30%;
+  padding: 10px;
+
+  font-family: "Space Grotesk", sans-serif;
 }
-.google h1{
-    font-size: 20px;
+.google h1 {
+  font-size: 20px;
 }
-.google{
-    display: flex;
-    align-items: center;
-    gap: 30px;
+.google {
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
-.SignInmain input{
-    outline: none;
-    background: #7FCAFF14;
-    height: 3vh;
-    border-style: none;
-    border-radius: 20px;
-    width: 50%;
+.SignInmain input {
+  outline: none;
+  background: #7fcaff14;
+  height: 3vh;
+  border-style: none;
+  border-radius: 20px;
+  width: 50%;
+  color: white;
+  text-align: center;
 }
-.SignInmain ::placeholder{
-    
-    font-family: 'Space Grotesk', sans-serif;
+.SignInmain ::placeholder {
+  font-family: "Space Grotesk", sans-serif;
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
-.btn{
-    color: white;
-    margin-left: 20px;
+.btn {
+  color: white;
+  margin-left: 20px;
 }
 
 @media only screen and (min-width: 900px) and (max-width: 1115px) {
-    .SignInmain .box{
-        margin-top: 20%;
-    }
+  .SignInmain .box {
+    margin-top: 20%;
   }
-  @media only screen and (min-width: 600px) and (max-width: 900px) {
-    .SignInmain .box
-    {
-        margin-top: 30%;
-        width: 40%;
-    }
+}
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  .SignInmain .box {
+    margin-top: 30%;
+    width: 40%;
   }
-  @media only screen and (min-width: 100px) and (max-width: 600px) {
-    .SignInmain .box
-    {
-        margin-top: 50%;
-        width: 60%;
-    }
+}
+@media only screen and (min-width: 100px) and (max-width: 600px) {
+  .SignInmain .box {
+    margin-top: 50%;
+    width: 60%;
   }
+}

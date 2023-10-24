@@ -4,12 +4,15 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
 import DataProvider from "./context/DataProvider";
+import UserProvider from "./context/UserProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <DataProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </DataProvider>
+  <BrowserRouter>
+    <UserProvider>
+      <DataProvider>
+        <App />
+      </DataProvider>
+    </UserProvider>
+  </BrowserRouter>
 );

@@ -1,10 +1,9 @@
-import { Outlet, Navigate } from 'react-router-dom'
+import { Outlet, Navigate } from "react-router-dom";
+import { useUser } from "./UserProvider";
 
 const PrivateRoute = () => {
-    let auth = {'token':true}
-    return(
-        auth.token ? <Outlet/> : <Navigate to="/Signin"/>
-    )
-}
+  const { user } = useUser();
+  return user ? <Outlet /> : <Navigate to="/Signin" />;
+};
 
-export default PrivateRoute
+export default PrivateRoute;
