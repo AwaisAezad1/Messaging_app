@@ -4,10 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import { useUser } from "../context/UserProvider";
+import buttonBackgroundImage from "../assets/images/button_background.png";
 
 function Auth() {
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [fullName, setfullName] = useState("");
@@ -15,12 +14,6 @@ function Auth() {
   const [licenseNumber, setlicenseNumber] = useState("");
   const navigate = useNavigate();
   const { signUp } = useUser();
-
-  // Function to update fullName state when firstname or lastname changes
-  const updateFullName = () => {
-    const updatedFullName = (firstname || "") + " " + (lastname || "");
-    setfullName(updatedFullName.trim() || "");
-  };
 
   const signupHandler = () => {
     if (email && password && fullName && phoneNumber && licenseNumber) {
@@ -32,49 +25,59 @@ function Auth() {
     <div className={styles.Authmain}>
       <div className={styles.box}>
         <img src={logo} alt="logo" />
-        <input
-          type="text"
-          placeholder="Firstname"
-          onChange={(e) => {
-            setFirstname(e.target.value);
-            updateFullName(); // Update fullName when firstname changes
-          }}
-        />
-        <input
-          type="text"
-          placeholder="Lastname"
-          onChange={(e) => {
-            setLastname(e.target.value);
-            updateFullName(); // Update fullName when lastname changes
-          }}
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          onChange={(e) => setemail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setpassword(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="FullName"
-          value={fullName} // Display the computed fullName
-          readOnly
-        />
-        <input
-          type="text"
-          placeholder="PhoneNumber"
-          onChange={(e) => setphoneNumber(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="LicenseNumber"
-          onChange={(e) => setlicenseNumber(e.target.value)}
-        />
-        <button onClick={signupHandler}>Sign Up</button>
+        <label>
+          Fullname
+          <input
+            type="text"
+            placeholder="Enter your Fullname"
+            onChange={(e) => {
+              setfullName(e.target.value);
+            }}
+          />
+        </label>
+
+        <label>
+          Email
+          <input
+            type="email"
+            placeholder="Enter your Email"
+            onChange={(e) => setemail(e.target.value)}
+          />
+        </label>
+        <label>
+          Password
+          <input
+            type="password"
+            placeholder="Enter your Password"
+            onChange={(e) => setpassword(e.target.value)}
+          />
+        </label>
+        <label>
+          PhoneNumber
+          <input
+            type="text"
+            placeholder="Enter your PhoneNumber"
+            onChange={(e) => setphoneNumber(e.target.value)}
+          />
+        </label>
+        <label>
+          LicenseNumber
+          <input
+            type="text"
+            placeholder="Enter your LicenseNumber"
+            onChange={(e) => setlicenseNumber(e.target.value)}
+          />
+        </label>
+        <label>
+          <button
+            onClick={signupHandler}
+            style={{
+              backgroundImage: `url(${buttonBackgroundImage})`,
+            }}
+          >
+            Sign Up
+          </button>
+        </label>
         <span>
           Already have an account?{" "}
           <NavLink to={"Signin"} className={styles.btn}>

@@ -5,6 +5,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import { useUser } from "../context/UserProvider";
+import buttonBackgroundImage from "../assets/images/button_background.png";
 
 function SignIn() {
   const [email, setemail] = useState("");
@@ -39,17 +40,30 @@ function SignIn() {
     <div className={styles.SignInmain}>
       <div className={styles.box}>
         <img src={logo} alt="logo" />
-        <input
-          type="email"
-          placeholder="Email"
-          onChange={(e) => setemail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setpassword(e.target.value)}
-        />
-        <button onClick={signinHandler}>Sign In</button>
+        <label>
+          Email
+          <input
+            type="email"
+            placeholder="Enter your Email"
+            onChange={(e) => setemail(e.target.value)}
+          />
+        </label>
+        <label>
+          Password
+          <input
+            type="password"
+            placeholder="Enter your Password"
+            onChange={(e) => setpassword(e.target.value)}
+          />
+        </label>
+        <button
+          onClick={signinHandler}
+          style={{
+            backgroundImage: `url(${buttonBackgroundImage})`,
+          }}
+        >
+          Sign In
+        </button>
       </div>
     </div>
   );

@@ -47,12 +47,12 @@ body {
 }
 .msgpeople p {
   font-size: 12px;
-  padding: 5px 0;
+  padding: 0;
   margin-left: 10px;
   cursor: pointer;
   border-bottom: 1px solid#187501;
-  width: 100vw;
-  color: white;
+  min-width: 23vw;
+  color: rgba(255, 255, 255, 0.658);
 }
 .msgpeople h1 {
   margin-left: 10px;
@@ -64,112 +64,170 @@ body {
   margin: 0;
   cursor: pointer;
 }
-.msgpeople img{
+.msgpeople img {
   cursor: pointer;
 }
 ::placeholder {
   padding-left: 30px;
   color: #888888;
 }
-.selectedChat p {
-  color: #888888 !important;
-}
 .selectedChat {
   font-weight: 600;
-  background-color:rgba(74, 87, 2, 0.301);
-  
+  background-color: rgba(74, 87, 2, 0.301);
 }
-.chatItem{
+.chatItem {
   margin-bottom: 10px;
+  color: white;
   display: flex;
   align-items: center;
   padding: 10px;
 }
-.chatItem img{
+.nameTimeBar {
+  display: flex;
+  justify-content: space-between;
+}
+.messageField {
+  max-width: 25vw;
+}
+.chatItem img {
   width: 60px;
   height: 60px;
   border-radius: 50px;
 }
-.chatItem:hover{
+.chatItem:hover {
   background-color: rgba(255, 255, 255, 0.068);
 }
 .hl {
   border-bottom: 1px solid #888888;
   margin: 5px 0px;
   margin-left: 10%;
-} 
+}
 @media only screen and (min-width: 1350px) and (max-width: 1700px) {
-    .search{
-      left: 3.5%;
-    }
-}
-  @media only screen and (min-width: 1169px) and (max-width: 1350px) {
-    .search{
-      left: 4%;
-    }
+  .search {
+    left: 3.5%;
   }
-  
-  @media only screen and (min-width: 1115px) and (max-width: 1169px) {
-    .search{
-      left: 5%;
-    }
-    .Messagemain input::placeholder{
-      padding-left: 15px;
-    }
-  }
-  
-  @media only screen and (min-width: 768px) and (max-width: 1115px) {
-    .search_part{
-      margin: 0;
-    }
-    .Messagemain input {
-      margin: 10px 0%;
-    }
-    .Messagemain input::placeholder{
-      padding-left: 15px;
-    }
-    .search{
-      left: 5%;
-    }
-    
-  }
-  @media only screen and (min-width: 500px) and (max-width: 768px) {
-    .search_part{
-      margin: 0;
-    }
-    .Messagemain input {
-      margin: 10px 0%;
-    }
-    .Messagemain input::placeholder{
-      padding-left: 10px;
-    }
-    .search{
-      left: 6%;
-    }
 }
-  @media only screen and  (min-width: 300px) and (max-width: 500px) {
-    .search_part{
-      margin: 0 5px;
-    }
-    .Messagemain input {
-      margin: 10px 0%;
-    }
-    .Messagemain input::placeholder{
-      padding-left: 10px;
-    }
-    .search{
-      left: 6%;
-    }
-    .Messagemain{
-      margin-left: -8%;
-      border-top-left-radius: 15px;
-    }
-    
+@media only screen and (min-width: 1169px) and (max-width: 1350px) {
+  .search {
+    left: 4%;
+  }
 }
-@media only screen and  (min-width: 150px) and (max-width: 300px) {
-    
-  .search{
+
+@media only screen and (min-width: 1115px) and (max-width: 1169px) {
+  .search {
+    left: 5%;
+  }
+  .Messagemain input::placeholder {
+    padding-left: 15px;
+  }
+}
+@media only screen and (min-width: 1023px) and (max-width: 1024px) {
+  .search {
+    left: 5%;
+  }
+  .Messagemain input::placeholder {
+    padding-left: 15px;
+  }
+  .msgpeople p {
+    min-width: 20vw;
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1023px) {
+  .search_part {
+    margin: 0;
+  }
+  .Messagemain input {
+    margin: 10px 0%;
+  }
+  .Messagemain input::placeholder {
+    padding-left: 15px;
+  }
+  .search {
+    left: 5%;
+  }
+  .chatItem img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+  }
+  .msgpeople p {
+    min-width: 20vw;
+  }
+}
+@media only screen and (min-width: 500px) and (max-width: 767px) {
+  .search_part {
+    margin: 0;
+  }
+  .Messagemain input {
+    margin: 10px 0%;
+  }
+  .Messagemain input::placeholder {
+    padding-left: 10px;
+  }
+  .search {
+    left: 6%;
+  }
+  .chatItem img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+  }
+  .chatItem {
+    display: block;
+    text-align: center;
+  }
+  .messageField .time,
+  p {
     display: none;
   }
-  
+}
+@media only screen and (min-width: 300px) and (max-width: 500px) {
+  .search_part {
+    margin: 0 5px;
+  }
+  .Messagemain input {
+    margin: 10px 0%;
+  }
+  .Messagemain input::placeholder {
+    padding-left: 10px;
+  }
+  .search {
+    left: 6%;
+  }
+  .Messagemain {
+    margin-left: -8%;
+    border-top-left-radius: 15px;
+  }
+  .chatItem img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+  }
+  .messageField .time,
+  p {
+    display: none;
+  }
+  .chatItem {
+    display: block;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 150px) and (max-width: 300px) {
+  .search {
+    display: none;
+  }
+  .chatItem img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+  }
+  .chatItem {
+    display: block;
+    text-align: center;
+  }
+  .messageField .time,
+  p {
+    display: none;
+  }
 }

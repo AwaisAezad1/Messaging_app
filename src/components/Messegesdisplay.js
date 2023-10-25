@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import color from "../assets/constants/color.json";
-import backgroundImage from "../assets/images/images.json";
 import styles from "./Messegesdisplay.module.css";
 import logo from "../assets/images/logo.png";
 import { useData } from "../context/DataProvider";
@@ -109,13 +108,7 @@ function Messegesdisplay() {
           </div>
         </div>
 
-        <div
-          id="message_body"
-          className={styles.message_body}
-          style={{
-            backgroundImage: `url(${backgroundImage.message_display_background})`,
-          }}
-        >
+        <div id="message_body" className={styles.message_body}>
           <div
             className={styles.messageContainer}
             style={{ paddingBottom: "30px" }}

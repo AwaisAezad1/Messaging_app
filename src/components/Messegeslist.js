@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Messegeslist.module.css";
 import Navbar from "../components/Navbar";
 import { useData } from "../context/DataProvider";
 import color from "../assets/constants/color.json";
-function Messegeslist() {
-  // Define a list of chat participants
-  const { chats, setSelectedChat, selectedChat } = useData();
 
-  // Define a state to keep track of the selected chat participant
+function Messegeslist() {
+  const { chats, setSelectedChat, selectedChat } = useData();
 
   return (
     <div
@@ -49,12 +47,26 @@ function Messegeslist() {
               alt="Profile Picture"
             />
             <h2>
-              <div>{participant.user.fullName}</div>
-              <p>
-                {participant.messages.length > 0
-                  ? participant.messages[participant.messages.length - 1].text
-                  : "No messages yet..."}
-              </p>
+              <div className={styles.messageField}>
+                <div className={styles.nameTimeBar}>
+                  <h1>{participant.user.fullName}</h1>
+                  <h1 className={styles.time}>
+                    {chats.map((chat) => {
+                      const creationDate = new Date(chat.creationDate);
+                      const time = creationDate.toLocaleTimeString([], {
+                        timeStyle: "short",
+                      });
+
+                      return <div key={chat.creationDate}>{time}</div>;
+                    })}
+                  </h1>
+                </div>
+                <p>
+                  {participant.messages.length > 0
+                    ? participant.messages[participant.messages.length - 1].text
+                    : "No messages yet..."}
+                </p>
+              </div>
             </h2>
           </div>
         ))}
