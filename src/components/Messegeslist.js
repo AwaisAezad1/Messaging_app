@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Messegeslist.module.css";
 import Navbar from "../components/Navbar";
 import { useData } from "../context/DataProvider";
-import color from '../assets/constants/color.json'
+import color from "../assets/constants/color.json";
 function Messegeslist() {
   // Define a list of chat participants
   const { chats, setSelectedChat, selectedChat } = useData();
@@ -10,7 +10,10 @@ function Messegeslist() {
   // Define a state to keep track of the selected chat participant
 
   return (
-    <div className={styles.Messagemain} style={{background:color.messagelist_background}}>
+    <div
+      className={styles.Messagemain}
+      style={{ background: color.messagelist_background }}
+    >
       <Navbar />
       <div className={styles.search_part}>
         <img
@@ -39,12 +42,20 @@ function Messegeslist() {
             }`}
             onClick={() => setSelectedChat(participant._id)}
           >
-            <img src={participant.memberIds[0].profilePictureUrl} alt="Profile Picture" />
-            <h2><h1>{participant.memberIds[0].fullName}</h1>
-            <p>{participant.messages.length > 0 ? participant.messages[participant.messages.length - 1].text : ''}</p>
+            <img
+              src={
+                "https://media.licdn.com/dms/image/D4E03AQFw7Z_PubcnnA/profile-displayphoto-shrink_100_100/0/1677415472848?e=1703721600&v=beta&t=PVQkBuDVesusHxRWRkJkIe3dqAG6bwF-amDFWEAZNmk"
+              }
+              alt="Profile Picture"
+            />
+            <h2>
+              <div>{participant.user.fullName}</div>
+              <p>
+                {participant.messages.length > 0
+                  ? participant.messages[participant.messages.length - 1].text
+                  : "No messages yet..."}
+              </p>
             </h2>
-                    
-
           </div>
         ))}
       </div>
