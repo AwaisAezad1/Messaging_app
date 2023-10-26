@@ -17,13 +17,19 @@ const DataProvider = ({ children }) => {
       setChats(data);
     });
     socket.on("updatePsychChat", (data) => {
-      if (chats.length === 0) {
-        setChats([data]);
+      const chatId = data["_id"];
+      console.log(chats.length);
+      if (chats.length) {
+        const filteredChats = chats.filter(
+          (element) => element["_id"] !== chatId
+        );
+        console.log(filteredChats);
+        setChats([data, ...filteredChats]);
       } else {
-        setChats((prev) => [data, ...prev]);
+        setChats([data]);
       }
     });
-  }, []);
+  }, [chats, socket]);
   useEffect(() => {
     if (user) {
       socket.emit("psychFetchAllChats", { psychiatristId: user._id });

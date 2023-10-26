@@ -51,14 +51,14 @@ function Messegeslist() {
                 <div className={styles.nameTimeBar}>
                   <h1>{participant.user.fullName}</h1>
                   <h1 className={styles.time}>
-                    {chats.map((chat) => {
-                      const creationDate = new Date(chat.creationDate);
-                      const time = creationDate.toLocaleTimeString([], {
-                        timeStyle: "short",
-                      });
-
-                      return <div key={chat.creationDate}>{time}</div>;
-                    })}
+                    <div key={participant.creationDate}>
+                      {new Date(participant.creationDate).toLocaleTimeString(
+                        [],
+                        {
+                          timeStyle: "short",
+                        }
+                      )}
+                    </div>
                   </h1>
                 </div>
                 <p>
