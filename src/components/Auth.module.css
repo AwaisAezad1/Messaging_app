@@ -31,6 +31,18 @@ body {
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.privacyPolicy {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.privacyPolicy input,
+span {
+  padding: 0;
+  margin: 0;
 }
 .Authmain label {
   display: flex;
@@ -60,6 +72,16 @@ body {
 span {
   text-align: center;
 }
+@media only screen and (min-width: 1115px) and (max-width: 1280px) {
+  .Authmain button {
+    background-size: 130%;
+    background-position: center;
+  }
+  .Authmain .box {
+    margin-top: 3vh;
+    max-width: 35%;
+  }
+}
 @media only screen and (min-width: 950px) and (max-width: 1115px) {
   .Authmain label {
     display: grid;
@@ -69,11 +91,15 @@ span {
     background-size: 130%;
     background-position: center;
   }
+  .Authmain .box {
+    margin-top: 1vh;
+    max-width: 35%;
+  }
 }
 @media only screen and (min-width: 600px) and (max-width: 950px) {
   .Authmain .box {
     max-width: 40%;
-    margin-top: 4vh;
+    margin-top: -0.4vh;
   }
   .Authmain button {
     background-size: 130%;
@@ -82,17 +108,32 @@ span {
 @media only screen and (min-width: 600px) and (max-width: 900px) {
   .Authmain .box {
     max-width: 40%;
+    margin-top: 3vh;
   }
   .Authmain button {
     background-size: 130%;
   }
 }
-@media only screen and (min-width: 380px) and (max-width: 600px) {
+@media only screen and (min-width: 540px) and (max-width: 600px) {
   * {
     font-size: 12px;
   }
   .Authmain .box {
     max-width: 70%;
+    margin-top: 1vh;
+  }
+  .Authmain button {
+    background-size: 500%;
+    background-position: center;
+  }
+}
+@media only screen and (min-width: 380px) and (max-width: 539px) {
+  * {
+    font-size: 12px;
+  }
+  .Authmain .box {
+    max-width: 70%;
+    margin-top: 7vh;
   }
   .Authmain button {
     background-size: 500%;
@@ -107,6 +148,7 @@ span {
   .Authmain .box {
     max-width: 70%;
     margin-top: 3vh;
+    gap: 22px;
   }
   .Authmain button {
     background-size: 500%;
@@ -120,6 +162,7 @@ span {
   .Authmain .box {
     margin-top: 0vw;
     max-width: 70%;
+    gap: 20px;
   }
   .Authmain button {
     background-size: 500%;

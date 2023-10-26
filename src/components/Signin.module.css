@@ -39,6 +39,8 @@
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 .SignInmain input {
   outline: none;

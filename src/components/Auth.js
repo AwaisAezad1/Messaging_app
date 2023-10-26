@@ -68,6 +68,15 @@ function Auth() {
             onChange={(e) => setlicenseNumber(e.target.value)}
           />
         </label>
+        <div className={styles.privacyPolicy}>
+          <input
+            type="radio"
+            id="privacy"
+            name="privacyPolicy"
+            value="privacy"
+          />
+          <span>User agrees to the terms of service and privacy policy</span>
+        </div>
         <label>
           <button
             onClick={signupHandler}
@@ -75,7 +84,7 @@ function Auth() {
               backgroundImage: `url(${buttonBackgroundImage})`,
             }}
           >
-            Sign Up
+            SIGN UP
           </button>
         </label>
         <span>

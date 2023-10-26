@@ -62,7 +62,7 @@ function Messegesdisplay() {
       <h1>Download Vet-Guard for Mobile</h1>
       <h2>
         Make calls, share your screen and get a faster experience when you
-        download the Windows app.
+        download the Mobile app.
       </h2>
       <button>Get the App</button>
     </div>

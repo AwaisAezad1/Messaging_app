@@ -62,7 +62,7 @@ function SignIn() {
             backgroundImage: `url(${buttonBackgroundImage})`,
           }}
         >
-          Sign In
+          LOGIN
         </button>
       </div>
     </div>
