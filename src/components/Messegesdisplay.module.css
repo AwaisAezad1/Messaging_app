@@ -28,6 +28,10 @@
   justify-content: space-between;
   align-items: center;
 }
+.loading {
+  padding: 20px;
+  color: white;
+}
 .message_body {
   margin-top: -0.5%;
   padding-top: 1%;

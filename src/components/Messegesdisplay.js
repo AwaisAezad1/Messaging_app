@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import color from "../assets/constants/color.json";
 import styles from "./Messegesdisplay.module.css";
 import logo from "../assets/images/logo.png";
@@ -55,6 +55,18 @@ function Messegesdisplay() {
         });
     }
   }, [selectedChat]);
+
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "auto" });
+    }
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  });
 
   return !chat ? (
     <div className={styles.nochat_main}>
@@ -115,7 +127,7 @@ function Messegesdisplay() {
           >
             <div className={styles.incomingMessages}>
               {loading ? (
-                <div>Loading</div>
+                <div className={styles.loading}>Loading</div>
               ) : (
                 messages.map((msg, index) => (
                   <div
@@ -137,6 +149,7 @@ function Messegesdisplay() {
                   </div>
                 ))
               )}
+              <div ref={messagesEndRef} />
             </div>
           </div>
         </div>
